@@ -5,7 +5,7 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "./theme-toggle"
 import { buttonVariants } from "./ui/button"
-import { Download } from "lucide-react"
+import { Download, Menu, X } from "lucide-react"
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -18,6 +18,7 @@ const navItems = [
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -51,14 +52,48 @@ export function Navbar() {
           ))}
         </nav>
         
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <ThemeToggle />
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ variant: "outline" }), "hidden sm:flex rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 backdrop-blur-sm transition-all")}>
             <Download className="mr-2 h-4 w-4" />
             Resume
           </a>
+          <button 
+            className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 border-b border-border/50 bg-background/95 backdrop-blur-xl p-6 shadow-xl flex flex-col gap-6 animate-in slide-in-from-top-2">
+          <nav className="flex flex-col gap-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-1"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+          <a 
+            href="/resume.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full justify-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20")}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <Download className="mr-2 h-4 w-4" />
+            Download Resume
+          </a>
+        </div>
+      )}
     </header>
   )
 }
