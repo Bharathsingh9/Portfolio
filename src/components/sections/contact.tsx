@@ -133,29 +133,36 @@ export function Contact() {
             <Card className="glass-card border-border/50 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full pointer-events-none" />
               <CardContent className="p-8">
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <form action="https://formsubmit.co/bharathpalthyavath@gmail.com" method="POST" className="space-y-6">
+                  {/* FormSubmit Configuration */}
+                  <input type="hidden" name="_subject" value="New message from Portfolio!" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+                  
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-foreground">Name</label>
-                      <Input placeholder="John Doe" className="bg-background/50 border-border/50 focus:border-primary/50 transition-colors" />
+                      <Input name="name" required placeholder="John Doe" className="bg-background/50 border-border/50 focus:border-primary/50 transition-colors" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-foreground">Email</label>
-                      <Input type="email" placeholder="john@example.com" className="bg-background/50 border-border/50 focus:border-primary/50 transition-colors" />
+                      <Input type="email" name="email" required placeholder="john@example.com" className="bg-background/50 border-border/50 focus:border-primary/50 transition-colors" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground">Subject</label>
-                    <Input placeholder="Project Inquiry" className="bg-background/50 border-border/50 focus:border-primary/50 transition-colors" />
+                    <Input name="_subject_custom" required placeholder="Project Inquiry" className="bg-background/50 border-border/50 focus:border-primary/50 transition-colors" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground">Message</label>
                     <Textarea 
+                      name="message"
+                      required
                       placeholder="Hello Bharath, I'd like to discuss..." 
                       className="min-h-[150px] bg-background/50 border-border/50 focus:border-primary/50 transition-colors resize-y" 
                     />
                   </div>
-                  <Button className="w-full h-12 rounded-lg gap-2 text-md group relative overflow-hidden bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 transition-all">
+                  <Button type="submit" className="w-full h-12 rounded-lg gap-2 text-md group relative overflow-hidden bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 transition-all">
                     <span className="relative z-10 flex items-center gap-2">
                       Send Message <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </span>
