@@ -59,7 +59,7 @@ export function About() {
                 I am an Artificial Intelligence and Data Science undergraduate at Chaitanya Bharathi Institute of Technology (CBIT) with a CGPA of 8.92.
               </p>
               <p>
-                My expertise spans across Machine Learning, Generative AI, Retrieval-Augmented Generation (RAG), Explainable AI, Graph Neural Networks, Software Development, and Cybersecurity.
+                My expertise spans across Data Science, Data Analysis, Machine Learning, Generative AI, Retrieval-Augmented Generation (RAG), Explainable AI, Graph Neural Networks, and Software Development.
               </p>
               <p>
                 I thrive on designing intelligent systems that bridge the gap between complex algorithms and real-world applications, focusing on data-driven decision making, automation, and scalable architectures.

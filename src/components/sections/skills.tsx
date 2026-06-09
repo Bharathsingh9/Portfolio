@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
-const skillCategories = ["All", "Programming", "Web Development", "AI & ML", "Generative AI", "Software Development", "Databases"]
+const skillCategories = ["All", "Programming", "AI & ML", "Generative AI", "Data Analytics", "Software Development", "Web Development", "Databases"]
 
 const skills = [
   // Programming
@@ -32,6 +32,13 @@ const skills = [
   { name: "Semantic Search", category: "Generative AI", level: 85 },
   { name: "Vector Databases", category: "Generative AI", level: 85 },
   { name: "AI Agents", category: "Generative AI", level: 80 },
+  
+  // Data Analytics
+  { name: "Pandas", category: "Data Analytics", level: 90 },
+  { name: "NumPy", category: "Data Analytics", level: 85 },
+  { name: "Excel", category: "Data Analytics", level: 85 },
+  { name: "Power BI", category: "Data Analytics", level: 80 },
+  { name: "Data Visualization", category: "Data Analytics", level: 90 },
   
   // Databases
   { name: "MongoDB", category: "Databases", level: 85 },
