@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Bharath Singh Palthyavath | AI Engineer & Software Developer",
   description: "Official portfolio of Bharath Singh Palthyavath. Explore my projects and skills in Artificial Intelligence, Machine Learning, Generative AI, and Software Development.",
   keywords: ["Bharath Singh Palthyavath", "Bharath Singh", "Bharath Singh Tech", "AI Engineer", "Machine Learning", "Data Scientist", "Software Developer", "CBIT", "Portfolio"],
+  verification: {
+    google: "9L9kUZFfQtYhP_SJkOiWqNmKxKefbOtY9GR9PmXO9nM",
+  },
 };
 
 export default function RootLayout({
