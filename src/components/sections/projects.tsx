@@ -21,11 +21,11 @@ const projects = [
     features: ["Fraud Detection", "Graph Analytics", "Real-Time Prediction", "Explainable AI", "Investigation Dashboard"],
   },
   {
-    title: "VaultX – Zero-Knowledge Secure Document Vault",
-    description: "A secure document vault implementing client-side AES-256 encryption, encrypted file fragmentation, HMAC integrity verification, duress mode, and zero-knowledge architecture.",
-    technologies: ["React Native", "TypeScript", "Supabase", "AES-256", "HMAC-SHA256"],
-    github: "https://github.com/Bharathsingh9/ValutX-app",
-    features: ["Client-Side Encryption", "Secure Authentication", "Duress Mode", "File Fragmentation", "Zero-Knowledge Security"],
+    title: "AI Research Paper Assistant & Academic Mentor",
+    description: "A locally hosted AI-powered research assistant for intelligent academic paper analysis, conversational Q&A, and automated PowerPoint presentation generation.",
+    technologies: ["Python", "Streamlit", "LangChain", "LLMs", "FAISS", "RAG"],
+    github: "https://github.com/Bharathsingh9",
+    features: ["Paper Analysis", "Conversational Q&A", "Source-Cited Answers", "PPT Generation", "Literature Review Synthesis"],
   }
 ]
 
