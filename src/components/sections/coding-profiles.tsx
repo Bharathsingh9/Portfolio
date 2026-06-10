@@ -1,10 +1,26 @@
 "use client"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Code, TrendingUp, Activity, Terminal } from "lucide-react"
 import { FaGithub } from "react-icons/fa"
 
 export function CodingProfiles() {
+  const [repoCount, setRepoCount] = useState<string | number>("...");
+
+  useEffect(() => {
+    fetch("https://api.github.com/users/Bharathsingh9")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.public_repos !== undefined) {
+          setRepoCount(data.public_repos);
+        } else {
+          setRepoCount("13"); // Fallback
+        }
+      })
+      .catch(() => setRepoCount("13"));
+  }, []);
+
   return (
     <section className="py-24 relative">
       <div className="container px-4 md:px-6">
@@ -58,7 +74,7 @@ export function CodingProfiles() {
                   <div className="bg-background/50 rounded-xl p-4 border border-border/50 flex flex-col items-center text-center">
                     <Terminal className="w-5 h-5 text-primary mb-2" />
                     <span className="text-sm text-muted-foreground">Repositories</span>
-                    <span className="text-xl font-bold mt-1">25+</span>
+                    <span className="text-xl font-bold mt-1">{repoCount}</span>
                   </div>
                 </div>
               </CardContent>
