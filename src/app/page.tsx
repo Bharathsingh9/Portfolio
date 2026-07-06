@@ -10,16 +10,16 @@ import { Contact } from "@/components/sections/contact";
 
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col gap-24 md:gap-32 pb-24">
       <Hero />
       <About />
-      <Education />
-      <Experience />
-      <Skills />
       <Projects />
+      <Skills />
+      <Experience />
+      <Education />
       <Achievements />
       <CodingProfiles />
       <Contact />
-    </>
+    </div>
   );
 }

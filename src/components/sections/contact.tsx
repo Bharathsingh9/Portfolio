@@ -1,12 +1,12 @@
 "use client"
 import * as React from "react"
 import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { Mail, Phone, MapPin, Send, CheckCircle2, Copy } from "lucide-react"
-import { FaLinkedin } from "react-icons/fa"
+import { ArrowRight, CheckCircle2, Copy } from "lucide-react"
+import { FaLinkedin, FaGithub } from "react-icons/fa"
+import { SiLeetcode } from "react-icons/si"
 
 export function Contact() {
   const [copiedField, setCopiedField] = React.useState<string | null>(null)
@@ -18,158 +18,120 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-muted/30">
-      <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] translate-y-1/3 translate-x-1/3 pointer-events-none" />
-      
-      <div className="container px-4 md:px-6 relative z-10">
-        <div className="flex flex-col items-center justify-center mb-16 text-center">
-          <motion.h2 
+    <section id="contact" className="py-24 relative">
+      <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-16 items-start">
+          
+          {/* Left: Contact Info & Socials */}
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
+            className="space-y-12"
           >
-            Get in <span className="text-gradient">Touch</span>
-          </motion.h2>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="h-1 w-20 bg-primary rounded-full mb-4"
-          />
-          <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-            Interested in collaborating or have a question? I'm always open to discussing new projects, creative ideas, or opportunities.
-          </p>
-        </div>
+            <div>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
+                Get in touch
+              </h2>
+              <div className="h-1 w-12 bg-primary mb-8" />
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Interested in collaborating or have a question? I&apos;m always open to discussing new projects, creative ideas, or opportunities.
+              </p>
+            </div>
 
-        <div className="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
-          {/* Contact Info */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-2 space-y-6"
-          >
-            <Card className="glass-card border-border/50 h-full">
-              <CardContent className="p-8 space-y-8">
-                <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4 group">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary mt-1">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-muted-foreground mb-1">Email</p>
-                      <div className="flex items-center justify-between">
-                        <a href="mailto:bharathpalthyavath@gmail.com" className="font-semibold hover:text-primary transition-colors break-all">
-                          bharathpalthyavath@gmail.com
-                        </a>
-                        <button 
-                          onClick={() => copyToClipboard("bharathpalthyavath@gmail.com", "email")}
-                          className="text-muted-foreground hover:text-primary transition-colors ml-2"
-                        >
-                          {copiedField === "email" ? <CheckCircle2 className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 group">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary mt-1">
-                      <Phone className="w-5 h-5" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-muted-foreground mb-1">Phone</p>
-                      <div className="flex items-center justify-between">
-                        <a href="tel:+918688866136" className="font-semibold hover:text-primary transition-colors">
-                          +91 86888 66136
-                        </a>
-                        <button 
-                          onClick={() => copyToClipboard("+918688866136", "phone")}
-                          className="text-muted-foreground hover:text-primary transition-colors ml-2"
-                        >
-                          {copiedField === "phone" ? <CheckCircle2 className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 group">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary mt-1">
-                      <MapPin className="w-5 h-5" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-muted-foreground mb-1">Location</p>
-                      <p className="font-semibold">Hyderabad, Telangana, India</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 group">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary mt-1">
-                      <FaLinkedin className="w-5 h-5" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-muted-foreground mb-1">LinkedIn</p>
-                      <div className="flex items-center justify-between">
-                        <a href="https://www.linkedin.com/in/bharath-singh-palthyavath-120016324" target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-[#0077b5] transition-colors break-all">
-                          bharath-singh-palthyavath
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+            <div className="space-y-6">
+              <div className="flex flex-col gap-1">
+                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Email</span>
+                <div className="flex items-center gap-4">
+                  <a href="mailto:bharathpalthyavath@gmail.com" className="text-xl font-medium text-foreground hover:text-primary transition-colors">
+                    bharathpalthyavath@gmail.com
+                  </a>
+                  <button 
+                    onClick={() => copyToClipboard("bharathpalthyavath@gmail.com", "email")}
+                    className="p-2 hover:bg-secondary rounded-md text-muted-foreground transition-colors"
+                  >
+                    {copiedField === "email" ? <CheckCircle2 className="w-5 h-5 text-green-500" /> : <Copy className="w-5 h-5" />}
+                  </button>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+              
+              <div className="flex flex-col gap-1">
+                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Phone</span>
+                <div className="flex items-center gap-4">
+                  <a href="tel:+918688866136" className="text-xl font-medium text-foreground hover:text-primary transition-colors">
+                    +91 86888 66136
+                  </a>
+                  <button 
+                    onClick={() => copyToClipboard("+918688866136", "phone")}
+                    className="p-2 hover:bg-secondary rounded-md text-muted-foreground transition-colors"
+                  >
+                    {copiedField === "phone" ? <CheckCircle2 className="w-5 h-5 text-green-500" /> : <Copy className="w-5 h-5" />}
+                  </button>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-1">
+                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Location</span>
+                <span className="text-lg text-foreground">Hyderabad, Telangana, India</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 pt-4">
+              <a href="https://github.com/Bharathsingh9" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all">
+                <FaGithub className="w-5 h-5" />
+              </a>
+              <a href="https://www.linkedin.com/in/bharath-singh-palthyavath-120016324" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all">
+                <FaLinkedin className="w-5 h-5" />
+              </a>
+              <a href="https://leetcode.com/u/Bharath_singh_090/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all">
+                <SiLeetcode className="w-5 h-5" />
+              </a>
+            </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Right: Clean Contact Form */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-3"
+            transition={{ delay: 0.2 }}
+            className="bg-card border border-border/50 rounded-3xl p-8 md:p-10 shadow-sm"
           >
-            <Card className="glass-card border-border/50 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full pointer-events-none" />
-              <CardContent className="p-8">
-                <form action="https://formsubmit.co/bharathpalthyavath@gmail.com" method="POST" className="space-y-6">
-                  {/* FormSubmit Configuration */}
-                  <input type="hidden" name="_subject" value="New message from Portfolio!" />
-                  <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_template" value="table" />
-                  
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-foreground">Name</label>
-                      <Input name="name" required placeholder="John Doe" className="bg-background/50 border-border/50 focus:border-primary/50 transition-colors" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-foreground">Email</label>
-                      <Input type="email" name="email" required placeholder="john@example.com" className="bg-background/50 border-border/50 focus:border-primary/50 transition-colors" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground">Subject</label>
-                    <Input name="_subject_custom" required placeholder="Project Inquiry" className="bg-background/50 border-border/50 focus:border-primary/50 transition-colors" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground">Message</label>
-                    <Textarea 
-                      name="message"
-                      required
-                      placeholder="Hello Bharath, I'd like to discuss..." 
-                      className="min-h-[150px] bg-background/50 border-border/50 focus:border-primary/50 transition-colors resize-y" 
-                    />
-                  </div>
-                  <Button type="submit" className="w-full h-12 rounded-lg gap-2 text-md group relative overflow-hidden bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 transition-all">
-                    <span className="relative z-10 flex items-center gap-2">
-                      Send Message <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </span>
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            <form action="https://formsubmit.co/bharathpalthyavath@gmail.com" method="POST" className="space-y-6">
+              <input type="hidden" name="_subject" value="New message from Portfolio!" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-foreground">Name</label>
+                <Input name="name" required placeholder="John Doe" className="bg-background border-border focus-visible:ring-primary h-12 rounded-xl transition-all" />
+              </div>
+              
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-foreground">Email</label>
+                <Input type="email" name="email" required placeholder="john@example.com" className="bg-background border-border focus-visible:ring-primary h-12 rounded-xl transition-all" />
+              </div>
+              
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-foreground">Subject</label>
+                <Input name="_subject_custom" required placeholder="Project Inquiry" className="bg-background border-border focus-visible:ring-primary h-12 rounded-xl transition-all" />
+              </div>
+              
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-foreground">Message</label>
+                <Textarea 
+                  name="message"
+                  required
+                  placeholder="Tell me about your project..." 
+                  className="min-h-[160px] bg-background border-border focus-visible:ring-primary rounded-xl transition-all resize-y p-4" 
+                />
+              </div>
+              
+              <Button type="submit" className="w-full h-14 rounded-xl font-medium text-lg bg-foreground text-background hover:bg-foreground/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-2 group mt-4">
+                Send Message
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </form>
           </motion.div>
         </div>
       </div>

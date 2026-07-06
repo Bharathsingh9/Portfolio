@@ -4,6 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "./theme-toggle"
+
 import { buttonVariants } from "./ui/button"
 import { Download, Menu, X } from "lucide-react"
 
@@ -18,26 +19,37 @@ const navItems = [
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false)
+  const [isVisible, setIsVisible] = React.useState(true)
+  const [lastScrollY, setLastScrollY] = React.useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      const currentScrollY = window.scrollY
+      setIsScrolled(currentScrollY > 20)
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false)
+      } else {
+        setIsVisible(true)
+      }
+      setLastScrollY(currentScrollY)
     }
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [lastScrollY])
 
   return (
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "glass border-b border-border/50 py-3" : "bg-transparent py-5"
+        isScrolled ? "bg-background/95 backdrop-blur-sm border-b border-border/50 py-3" : "bg-transparent py-5",
+        isVisible ? "translate-y-0" : "-translate-y-full"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tighter text-gradient">Bharath Singh Tech</span>
+          <span className="text-xl font-bold tracking-tighter text-foreground">Bharath Singh</span>
         </Link>
         
         <nav className="hidden md:flex items-center gap-6">
@@ -54,7 +66,7 @@ export function Navbar() {
         
         <div className="flex items-center gap-2 sm:gap-4">
           <ThemeToggle />
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ variant: "outline" }), "hidden sm:flex rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 backdrop-blur-sm transition-all")}>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ variant: "outline" }), "hidden sm:flex rounded-full bg-transparent hover:bg-secondary text-foreground border border-border transition-all")}>
             <Download className="mr-2 h-4 w-4" />
             Resume
           </a>
@@ -86,7 +98,7 @@ export function Navbar() {
             href="/resume.pdf" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full justify-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20")}
+            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full justify-center rounded-full bg-transparent hover:bg-secondary text-foreground border border-border")}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <Download className="mr-2 h-4 w-4" />

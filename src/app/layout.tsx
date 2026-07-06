@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { ScrollProgress, MouseGlow } from "@/components/interactive-effects";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,12 +27,11 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-screen bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary relative`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <ScrollProgress />
-          <MouseGlow />
+
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">
