@@ -95,7 +95,7 @@ const projects = [
     subtitle: "Zero-Knowledge Secure Document Vault",
     description: "A high-security document vault designed under a hostile threat model featuring zero-knowledge client-side encryption, structural fragmentation, and duress mode handling. Built to ensure the backend never sees plaintext data, encryption keys, or meaningful file structure.",
     technologies: ["React Native", "Expo", "TypeScript", "Zustand", "Supabase"],
-    github: "https://github.com/Bharathsingh9/VaultX.git",
+    github: "https://github.com/Bharathsingh9/VaultX-app.git",
     live: "#",
     features: [
       "Zero-Knowledge Architecture",
