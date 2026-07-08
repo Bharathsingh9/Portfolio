@@ -88,6 +88,26 @@ const projects = [
     accentColor: "text-blue-600",
     accentBorder: "border-blue-600",
     accentBg: "bg-blue-50",
+  },
+  {
+    number: "05",
+    title: "VaultX",
+    subtitle: "Zero-Knowledge Secure Document Vault",
+    description: "A high-security document vault designed under a hostile threat model featuring zero-knowledge client-side encryption, structural fragmentation, and duress mode handling. Built to ensure the backend never sees plaintext data, encryption keys, or meaningful file structure.",
+    technologies: ["React Native", "Expo", "TypeScript", "Zustand", "Supabase"],
+    github: "https://github.com/Bharathsingh9/VaultX.git",
+    live: "#",
+    features: [
+      "Zero-Knowledge Architecture",
+      "Structural Fragmentation",
+      "Duress Mode (Decoy Vault)",
+      "Session-Bound Memory Safety",
+      "Biometric & PIN Authentication",
+      "Cryptographic Integrity"
+    ],
+    accentColor: "text-purple-600",
+    accentBorder: "border-purple-600",
+    accentBg: "bg-purple-50",
   }
 ]
 
