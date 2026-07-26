@@ -11,7 +11,7 @@ const certifications = [
 
 const accolades = [
   { text: "Runner-Up — Cyber Fest Hackathon", icon: Trophy },
-  { text: "Strong Academic Performance (CGPA 8.92)", icon: Award },
+  { text: "Strong Academic Performance (CGPA 8.95)", icon: Award },
 ]
 
 const responsibilities = [
