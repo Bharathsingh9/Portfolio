@@ -6,7 +6,7 @@ const education = [
     degree: "B.E. Artificial Intelligence and Data Science",
     institution: "Chaitanya Bharathi Institute of Technology",
     period: "2023 – 2027",
-    score: "CGPA: 8.92/10",
+    score: "CGPA: 8.95/10",
   },
   {
     degree: "Intermediate",
@@ -27,7 +27,7 @@ export function Education() {
     <section id="education" className="py-20 relative">
       <div className="container px-4 md:px-6 max-w-4xl mx-auto">
         <div className="mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -35,7 +35,7 @@ export function Education() {
           >
             Education
           </motion.h2>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -55,7 +55,7 @@ export function Education() {
             >
               {/* Timeline Dot */}
               <div className="absolute w-2 h-2 bg-foreground rounded-full -left-[4.5px] top-2" />
-              
+
               <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
                 <h3 className="text-xl md:text-2xl font-bold text-foreground">
                   {item.degree}
@@ -64,11 +64,11 @@ export function Education() {
                   {item.period}
                 </span>
               </div>
-              
+
               <p className="text-lg text-primary font-medium mb-3">
                 {item.institution}
               </p>
-              
+
               <div className="inline-flex items-center px-2 py-1 rounded-md border border-border bg-card text-xs font-medium text-muted-foreground mt-1">
                 {item.score}
               </div>
