@@ -6,7 +6,7 @@ export function About() {
     <section id="about" className="py-24 relative overflow-hidden">
       <div className="container px-4 md:px-6 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
-          
+
           {/* Left Side: Section Title */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -30,7 +30,7 @@ export function About() {
             className="space-y-8 text-lg md:text-xl text-foreground/80 leading-relaxed text-justify font-normal"
           >
             <p>
-              I am an Artificial Intelligence and Data Science undergraduate at Chaitanya Bharathi Institute of Technology (CBIT) with a CGPA of 8.92.
+              I am an Artificial Intelligence and Data Science undergraduate at Chaitanya Bharathi Institute of Technology (CBIT) with a CGPA of 8.95.
             </p>
             <p>
               My expertise spans across Data Science, Data Analysis, Machine Learning, Generative AI, Retrieval-Augmented Generation (RAG), Explainable AI, Graph Neural Networks, and Software Development.
@@ -38,9 +38,9 @@ export function About() {
             <p>
               I thrive on designing intelligent systems that bridge the gap between complex algorithms and real-world applications, focusing on data-driven decision making, automation, and scalable architectures.
             </p>
-            
+
           </motion.div>
-          
+
         </div>
       </div>
     </section>
