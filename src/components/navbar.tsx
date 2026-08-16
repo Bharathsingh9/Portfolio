@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { ThemeToggle } from "./theme-toggle"
 
 import { buttonVariants } from "./ui/button"
-import { Download, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -66,10 +66,6 @@ export function Navbar() {
         
         <div className="flex items-center gap-2 sm:gap-4">
           <ThemeToggle />
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ variant: "outline" }), "hidden sm:flex rounded-full bg-transparent hover:bg-secondary text-foreground border border-border transition-all")}>
-            <Download className="mr-2 h-4 w-4" />
-            Resume
-          </a>
           <button 
             className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -94,16 +90,6 @@ export function Navbar() {
               </Link>
             ))}
           </nav>
-          <a 
-            href="/resume.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full justify-center rounded-full bg-transparent hover:bg-secondary text-foreground border border-border")}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <Download className="mr-2 h-4 w-4" />
-            Download Resume
-          </a>
         </div>
       )}
     </header>

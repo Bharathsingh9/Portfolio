@@ -7,23 +7,25 @@ import { cn } from "@/lib/utils"
 const projects = [
   {
     number: "01",
-    title: "RecruitIQ",
-    subtitle: "AI-Powered Recruitment Intelligence Platform",
-    description: "An intelligent hiring platform that automates resume screening, candidate ranking, job-description matching, interview question generation, candidate evaluation, recruiter analytics, and explainable hiring decisions. Designed to handle large volumes of applications with high accuracy.",
-    technologies: ["Python", "FastAPI", "PostgreSQL", "LangChain", "FAISS", "Docker"],
-    github: "https://github.com/Bharathsingh9/RecruitIQ.git",
+    title: "Enterprise-Grade RAG",
+    subtitle: "Production-Grade LangGraph & Portkey RAG System",
+    description: "A production-grade, enterprise-level RAG system built with LangGraph, Portkey LLM Gateway, and Gemini Embeddings. The system distinguishes between technical 'True Data' and random 'Noisy Data' using semantic re-ranking, history-aware planning, and NeMo Guardrails for input/output safety.",
+    technologies: ["LangGraph", "Portkey Gateway", "Gemini Embeddings", "NeMo Guardrails", "Qdrant Cloud", "FlashRank", "FastAPI", "RAGAS"],
+    github: "https://github.com/Bharathsingh9/Enterprise-Grade-Retrieval-Augmented-Generation.git",
     live: "#",
     features: [
-      "Resume Parsing & Ranking",
-      "RAG Interview Engine",
-      "Explainable AI (SHAP)",
-      "Skill Gap Analysis",
-      "Semantic Search",
-      "Recruiter Dashboard"
+      "LangGraph Multi-Step Planning & History-Aware Reasoning",
+      "NeMo Guardrails Input/Output Safety & Jailbreak Protection",
+      "Portkey LLM Gateway with Groq Automatic Fallback Routing",
+      "Qdrant Cloud Vector Search & FlashRank Local Reranking",
+      "Gemini Embeddings (3072-dim) via langchain-google-genai",
+      "On-Device Multi-Format Parsing (PDF, HTML, TXT, DOCX, PPTX)",
+      "Full Observability with Pydantic Logfire & LangSmith",
+      "RAGAS Evaluation Suite (6 Metrics) & Streamlit App"
     ],
-    accentColor: "text-emerald-600",
-    accentBorder: "border-emerald-600",
-    accentBg: "bg-emerald-50",
+    accentColor: "text-indigo-600",
+    accentBorder: "border-indigo-600",
+    accentBg: "bg-indigo-50",
   },
   {
     number: "02",
@@ -47,6 +49,26 @@ const projects = [
   },
   {
     number: "03",
+    title: "VaultX",
+    subtitle: "Zero-Knowledge Secure Document Vault",
+    description: "A high-security document vault designed under a hostile threat model featuring zero-knowledge client-side encryption, structural fragmentation, and duress mode handling. Built to ensure the backend never sees plaintext data, encryption keys, or meaningful file structure.",
+    technologies: ["React Native", "Expo", "TypeScript", "Zustand", "Supabase"],
+    github: "https://github.com/Bharathsingh9/VaultX-app.git",
+    live: "#",
+    features: [
+      "Zero-Knowledge Architecture",
+      "Structural Fragmentation",
+      "Duress Mode (Decoy Vault)",
+      "Session-Bound Memory Safety",
+      "Biometric & PIN Authentication",
+      "Cryptographic Integrity"
+    ],
+    accentColor: "text-purple-600",
+    accentBorder: "border-purple-600",
+    accentBg: "bg-purple-50",
+  },
+  {
+    number: "04",
     title: "AI Research Assistant",
     subtitle: "Academic Mentor & Paper Analyzer",
     description: "A locally hosted AI-powered research assistant for intelligent academic paper analysis, conversational Q&A, and automated PowerPoint presentation generation. Built for researchers to accelerate literature reviews.",
@@ -66,7 +88,27 @@ const projects = [
     accentBg: "bg-teal-50",
   },
   {
-    number: "04",
+    number: "05",
+    title: "RecruitIQ",
+    subtitle: "AI-Powered Recruitment Intelligence Platform",
+    description: "An intelligent hiring platform that automates resume screening, candidate ranking, job-description matching, interview question generation, candidate evaluation, recruiter analytics, and explainable hiring decisions. Designed to handle large volumes of applications with high accuracy.",
+    technologies: ["Python", "FastAPI", "PostgreSQL", "LangChain", "FAISS", "Docker"],
+    github: "https://github.com/Bharathsingh9/RecruitIQ.git",
+    live: "#",
+    features: [
+      "Resume Parsing & Ranking",
+      "RAG Interview Engine",
+      "Explainable AI (SHAP)",
+      "Skill Gap Analysis",
+      "Semantic Search",
+      "Recruiter Dashboard"
+    ],
+    accentColor: "text-emerald-600",
+    accentBorder: "border-emerald-600",
+    accentBg: "bg-emerald-50",
+  },
+  {
+    number: "06",
     title: "MedIntel AI",
     subtitle: "Explainable Multi-Disease Prediction & Health Analytics Platform",
     description: "A production-grade healthcare analytics platform that combines Machine Learning, Explainable AI (SHAP/LIME), and Retrieval-Augmented Generation (RAG) to deliver interpretable disease risk prediction, biological age estimation, and AI-powered health recommendations.",
@@ -88,26 +130,6 @@ const projects = [
     accentColor: "text-blue-600",
     accentBorder: "border-blue-600",
     accentBg: "bg-blue-50",
-  },
-  {
-    number: "05",
-    title: "VaultX",
-    subtitle: "Zero-Knowledge Secure Document Vault",
-    description: "A high-security document vault designed under a hostile threat model featuring zero-knowledge client-side encryption, structural fragmentation, and duress mode handling. Built to ensure the backend never sees plaintext data, encryption keys, or meaningful file structure.",
-    technologies: ["React Native", "Expo", "TypeScript", "Zustand", "Supabase"],
-    github: "https://github.com/Bharathsingh9/VaultX-app.git",
-    live: "#",
-    features: [
-      "Zero-Knowledge Architecture",
-      "Structural Fragmentation",
-      "Duress Mode (Decoy Vault)",
-      "Session-Bound Memory Safety",
-      "Biometric & PIN Authentication",
-      "Cryptographic Integrity"
-    ],
-    accentColor: "text-purple-600",
-    accentBorder: "border-purple-600",
-    accentBg: "bg-purple-50",
   }
 ]
 

@@ -45,7 +45,9 @@ const skills = [
   { name: "Large Language Models (LLMs)", category: "Generative AI" },
   { name: "Prompt Engineering", category: "Generative AI" },
   { name: "LangChain", category: "Generative AI" },
+  { name: "LangGraph", category: "Generative AI" },
   { name: "Retrieval-Augmented Generation (RAG)", category: "Generative AI" },
+  { name: "NeMo Guardrails", category: "Generative AI" },
   { name: "Embeddings", category: "Generative AI" },
   { name: "Semantic Search", category: "Generative AI" },
   { name: "AI Agents", category: "Generative AI" },
@@ -69,6 +71,7 @@ const skills = [
   { name: "MySQL", category: "Databases & Vector Stores" },
   { name: "PostgreSQL", category: "Databases & Vector Stores" },
   { name: "MongoDB", category: "Databases & Vector Stores" },
+  { name: "Qdrant", category: "Databases & Vector Stores" },
   { name: "FAISS", category: "Databases & Vector Stores" },
   { name: "ChromaDB", category: "Databases & Vector Stores" },
   
@@ -80,6 +83,7 @@ const skills = [
   { name: "Git", category: "Developer Tools" },
   { name: "GitHub", category: "Developer Tools" },
   { name: "Docker", category: "Developer Tools" },
+  { name: "LangSmith", category: "Developer Tools" },
   { name: "VS Code", category: "Developer Tools" },
   { name: "Jupyter Notebook", category: "Developer Tools" },
 ]
